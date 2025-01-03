@@ -93,7 +93,7 @@ a:focus {
 }
 
 .section-title {
-  padding-bottom: 40px;
+  padding-bottom: 0px !important;
 }
 
 section {
@@ -108,17 +108,16 @@ footer {
 }
 
 .overlay {
-  background: #536976; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    #292e49,
-    #536976
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    #292e49,
-    #536976
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #536976;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right,
+      #292e49,
+      #536976);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right,
+      #292e49,
+      #536976);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   opacity: 0.9;
   position: absolute;
   top: 0;
@@ -273,12 +272,12 @@ footer {
   color: var(--primary-red-background);
 }
 
-.custom-navbar .navbar-nav > li > a:hover,
-.custom-navbar .navbar-nav > li > a:focus {
+.custom-navbar .navbar-nav>li>a:hover,
+.custom-navbar .navbar-nav>li>a:focus {
   background-color: transparent;
 }
 
-.custom-navbar .nav li.active > a {
+.custom-navbar .nav li.active>a {
   background-color: transparent;
   color: var(--primary-red-background);
 }
@@ -377,11 +376,11 @@ footer {
   border-bottom: 0;
 }
 
-#feature .nav > li > a {
+#feature .nav>li>a {
   padding: 8px 0;
 }
 
-#feature .nav-tabs > li > a {
+#feature .nav-tabs>li>a {
   color: #999999;
   font-size: 18px;
   border: 0;
@@ -390,16 +389,16 @@ footer {
   margin-right: 35px;
 }
 
-#feature .nav-tabs > li.active > a,
-#feature .nav-tabs > li.active > a:focus,
-#feature .nav-tabs > li.active > a:hover {
+#feature .nav-tabs>li.active>a,
+#feature .nav-tabs>li.active>a:focus,
+#feature .nav-tabs>li.active>a:hover {
   background: transparent;
   color: #202020;
   border-bottom: 3px solid var(--primary-red-background);
 }
 
-#feature .nav > li > a:focus,
-#feature .nav > li > a:hover {
+#feature .nav>li>a:focus,
+#feature .nav>li>a:hover {
   background: transparent;
   border-bottom: 3px solid var(--primary-red-background);
   color: #202020;
@@ -721,7 +720,7 @@ footer {
     padding-left: 15px;
   }
 
-  #feature .nav-tabs > li > a {
+  #feature .nav-tabs>li>a {
     font-size: 16px;
     margin-right: 20px;
   }
@@ -800,6 +799,7 @@ footer {
 }
 
 @media screen and (max-width: 480px) {
+
   .online-form input[type="email"],
   .online-form .form-control {
     width: 85%;
