@@ -233,61 +233,76 @@
                <div class="row">
                     <div class="col-2">&nbsp;</div>
                     <div class="col-8">
-                         <form id="contact-form" role="form" action="" method="post">
-                              <div class="section-title">
-                                   <h1>Say hello to us</h1>
-                                   <p>
-                                        We would love to hear from you. Whether you have a query, need assistance, or
-                                        wish to collaborate, feel free to reach out to us.
-                                   </p>
-                              </div>
+                         <form id="contact-form" role="form" action="https://quantumbytestudios.in/submit-ar"
+                              method="post">
+                              <section class="section-title">
+                                   <h1>Say Hello to Us</h1>
+                                   <p>We would love to hear from you. Whether you have a query, need assistance, or wish
+                                        to collaborate, feel
+                                        free to reach out to us.</p>
+                              </section>
                               <br>
                               <div class="row">
+                                   <!-- Full Name -->
                                    <div class="col-12">
-                                        <input type="text" class="input-box" placeholder="Full name" name="full_name"
-                                             required>
+                                        <input type="text" class="input-box" id="full_name" placeholder="Full name"
+                                             name="full_name" required aria-required="true">
                                    </div>
+                                   <!-- Email Address -->
                                    <div class="col-12">
-                                        <input type="email" class="input-box" placeholder="Email address"
-                                             name="email_address" required>
+                                        <input type="email" class="input-box" id="email_address"
+                                             placeholder="Email address" name="email_address" required
+                                             aria-required="true">
                                    </div>
+                                   <!-- Phone Number -->
                                    <div class="col-12">
-                                        <input type="text" class="input-box" id="phone" placeholder="Phone number"
-                                             name="phone_number" required>
+                                        <input type="tel" class="input-box" id="phone" placeholder="Phone number"
+                                             name="phone_number" pattern="^\d{10}$"
+                                             title="Enter a 10-digit phone number" required aria-required="true">
                                    </div>
+                                   <!-- Services Dropdown -->
                                    <div class="col-12">
-                                        <select class="input-box" name="services" required>
+                                        <select class="input-box" id="services" name="services" required
+                                             aria-required="true">
                                              <option value="" disabled selected>Select a service</option>
-                                             <option value="" disabled>Financial Services</option>
-                                             <option value="Business Loan">Business Loan</option>
-                                             <option value="Personal Loan">Personal Loan</option>
-                                             <option value="Home Loan">Home Loans</option>
-                                             <option value="Loan Against Property">Loan Against Property</option>
-                                             <option value="Construction Loan">Construction Loan</option>
-                                             <option value="" disabled>Real Estate</option>
-                                             <option value="Residential Property Sales &
-                                                                                                    Rentals">
-                                                  Residential Property Sales &
-                                                  Rentals</option>
-                                             <option value="Commercial Property Sales &
-                                                                                                    Leasing">Commercial
-                                                  Property Sales &
-                                                  Leasing</option>
-                                             <option value="Investment Advisory">Investment Advisory</option>
-                                             <option value="Real Estate (Dealing of Land Sell and
-                                                                                                    Purchase)">Real
-                                                  Estate (Dealing of Land
-                                                  Sell and
-                                                  Purchase)</option>
+                                             <optgroup label="Financial Services">
+                                                  <option value="Business Loan">Business Loan</option>
+                                                  <option value="Personal Loan">Personal Loan</option>
+                                                  <option value="Home Loan">Home Loans</option>
+                                                  <option value="Loan Against Property">Loan Against Property</option>
+                                                  <option value="Construction Loan">Construction Loan</option>
+                                             </optgroup>
+                                             <optgroup label="Real Estate">
+                                                  <option value="Residential Property Sales & Rentals">Residential
+                                                       Property Sales & Rentals
+                                                  </option>
+                                                  <option value="Commercial Property Sales & Leasing">Commercial
+                                                       Property Sales & Leasing
+                                                  </option>
+                                                  <option value="Investment Advisory">Investment Advisory</option>
+                                                  <option value="Real Estate (Dealing of Land Sell and Purchase)">Real
+                                                       Estate (Dealing of Land
+                                                       Sell and Purchase)</option>
+                                             </optgroup>
                                         </select>
                                    </div>
+                                   <!-- Message -->
                                    <div class="col-12">
-                                        <textarea style="resize: none;" class="input-box" rows="8"
-                                             placeholder="Your message" name="message" required></textarea>
+                                        <textarea id="message" class="input-box" rows="8" placeholder="Your message"
+                                             name="message" required aria-required="true"
+                                             style="resize: none;"></textarea>
                                    </div>
+                                   <!-- Hidden Inputs -->
+                                   <input type="hidden" name="source" id="source">
+                                   <input type="hidden" name="date" id="date">
+                                   <script>
+                                        document.getElementById('source').value = window.location.hostname;
+                                        document.getElementById('date').value = new Date().toISOString().split('T')[0];
+                                   </script>
+                                   <!-- Submit Button -->
                                    <div class="col-12">
                                         <input type="submit" class="form-control" name="send_message"
-                                             value="Send Message">
+                                             value="Send Message" title="Click to send your message">
                                    </div>
                               </div>
                          </form>
